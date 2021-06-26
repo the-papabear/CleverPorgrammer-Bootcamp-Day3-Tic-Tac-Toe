@@ -24,6 +24,15 @@ export default class Game {
 
     if (!winningCombination) {
       this.nextTurn();
+      //Added as homework
+    } else {
+      document.querySelector('.game').classList.add('hidden');
+      setTimeout(function () {
+        document.querySelector('.winner').classList.remove('hidden');
+        document.querySelector('.announcement').textContent =
+          'Congratulations!';
+      }, 600);
+      //////////////////////////
     }
   }
 

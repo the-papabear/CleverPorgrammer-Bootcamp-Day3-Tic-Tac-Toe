@@ -4,12 +4,25 @@
 }
 
 body {
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Georgia', sans-serif;
   color: #4c6986;
 }
 
 .title {
   max-width: 500px;
+  line-height: 1.4;
+}
+
+.tic {
+  color: #42bed7;
+}
+
+.tac {
+  color: #23ce6b;
+}
+
+.toe {
+  color: #f8bf44;
 }
 
 .wrapper {
@@ -27,6 +40,46 @@ body {
   font-weight: bold;
 }
 
+.player-names {
+  display: flex;
+  align-items: baseline;
+  margin-top: 50px;
+}
+
+.player-name--input {
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.player-name--1,
+.player-name--2 {
+  width: 200px;
+  height: 30px;
+  border-radius: 50px;
+  border: 2px solid rgba(75, 105, 134, 0.5);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.player-name--1:hover {
+  border-color: #42bed7;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.player-name--2:hover {
+  border-color: #f8bf44;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.add-player-name {
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+  border: 2px solid rgba(75, 105, 134, 0.5);
+  font-size: 14px;
+}
+
 .restart {
   width: 175px;
   height: 50px;
@@ -38,12 +91,20 @@ body {
   transition: all 0.2s ease;
   cursor: pointer;
   font-weight: bold;
-  margin-top: 30px;
+  margin-top: 50px;
+  margin-left: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.restart:hover {
+.restart:hover,
+.add-player-name:hover {
   color: white;
   background: #4c6986;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.right {
+  position: relative;
 }
 
 .header {
@@ -70,8 +131,8 @@ body {
 }
 
 .player-o.active {
-  color: #d7bafb;
-  border-color: #d7bafb;
+  color: #f8bf44;
+  border-color: #f8bf44;
 }
 
 .game {
@@ -117,11 +178,42 @@ body {
 }
 
 .tile-o {
-  color: #d7bafb;
+  color: #f8bf44;
 }
 
-.tile-winner {
-  color: #23ce6b;
+.winner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 500px;
+  height: 500px;
+}
+
+.winner .img {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.winner .img img {
+  height: 80%;
+}
+
+.announcement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1fa858;
+  font-family: 'Nova Flat', serif;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.hidden {
+  visibility: hidden;
+  margin: 0;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -132,4 +224,4 @@ body {
   .left {
     margin-bottom: 50px;
   }
-} ;
+}
